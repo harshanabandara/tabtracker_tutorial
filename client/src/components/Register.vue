@@ -2,15 +2,15 @@
   <div>
     <h1>Register</h1>
 
-    <input 
-      type="email" 
-      name="email" 
+    <input
+      type="email"
+      name="email"
       v-model="email"
       placeholder="Email"/>
     <br>
-    <input 
-      type="password" 
-      name="password" 
+    <input
+      type="password"
+      name="password"
       v-model="password"
       placeholder="Password">
     <br>
@@ -22,19 +22,19 @@
 export default {
   data () {
     return {
-      email:'',
-      password:''
+      email: '',
+      password: ''
     }
   },
-  watch:{
-    email (value){
-      console.log('Email has changed ',value)
+  watch: {
+    email (value) {
+      console.log('Email has changed ', value)
     }
   },
-  mounted (){
-    setTimeout (()=>{
+  mounted () {
+    setTimeout(() => {
       this.email = 'Hello World'
-    },2000)
+    }, 2000)
   }
 }
 </script>
