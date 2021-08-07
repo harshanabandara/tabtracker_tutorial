@@ -14,11 +14,14 @@
       v-model="password"
       placeholder="Password">
     <br>
-    <button>Register</button>
+    <button
+      @click="register">Register
+    </button>
   </div>
 </template>
 
 <script>
+import AuthenticationService from '@/services/AuthenticationService'
 export default {
   data () {
     return {
@@ -31,10 +34,14 @@ export default {
       console.log('Email has changed ', value)
     }
   },
-  mounted () {
-    setTimeout(() => {
-      this.email = 'Hello World'
-    }, 2000)
+  methods: {
+    async register () {
+      const authresponse = await AuthenticationService.register({
+        email: this.email,
+        password: this.password
+      })
+      console.log(authresponse.data)
+    }
   }
 }
 </script>
